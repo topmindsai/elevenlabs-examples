@@ -51,6 +51,18 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
                             >
                                 Modern Widget
                             </Link>
+                            <Link
+                                href="/modern-demo"
+                                className="text-sm font-medium hover:text-gray-500 bg-blue-100 px-3 py-1 rounded-full"
+                            >
+                                Modern Demo
+                            </Link>
+                            <Link
+                                href="/test-conversation"
+                                className="text-sm font-medium hover:text-gray-500"
+                            >
+                                Test
+                            </Link>
                         </div>
                     </div>
 
