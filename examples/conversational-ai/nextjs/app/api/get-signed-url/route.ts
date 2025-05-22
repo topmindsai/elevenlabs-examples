@@ -15,11 +15,11 @@ export async function OPTIONS() {
 }
 
 export async function GET() {
-  const agentId = process.env.AGENT_ID;
+  const agentId = process.env.NEXT_PUBLIC_AGENT_ID;
   const apiKey = process.env.ELEVENLABS_API_KEY;
   
   if (!agentId) {
-    console.error("AGENT_ID is not set");
+    console.error("NEXT_PUBLIC_AGENT_ID is not set");
     return NextResponse.json(
       { error: "Agent ID is not configured" },
       { status: 500, headers: corsHeaders() }
@@ -37,7 +37,7 @@ export async function GET() {
   try {
     console.log("Fetching signed URL for agent ID:", agentId);
     
-    // Using the direct fetch approach as shown in the documentation
+    // Using the exact URL from the documentation
     const response = await fetch(
       `https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id=${agentId}`,
       {
@@ -67,4 +67,4 @@ export async function GET() {
       { status: 500, headers: corsHeaders() }
     );
   }
-}
+} 
